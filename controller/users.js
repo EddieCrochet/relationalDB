@@ -4,7 +4,7 @@ let db = require('../sql/connection.js');
 let getAllUsers = (req, res) => {
     console.log("GET -- users/getAllUsers");
 
-    let sql = `select * from appUsers`;
+    let sql = `select * from users`;
 
     db.query(sql, (err, rows) => {
         if(err){
