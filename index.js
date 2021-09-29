@@ -10,7 +10,7 @@ app.use(express.json());
 // assign port connection to designated OR 4000 if not
 let port = process.env.PORT || 4000;
 
-// tell app to use users route
+// tell app to use users route - and where
 const usersRoute = require('./routers/users');
 app.use('/users', usersRoute);
 
