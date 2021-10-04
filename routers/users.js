@@ -9,16 +9,16 @@ let controller = require('../controller/users');
 router.get('/', controller.getAllUsers);
 
 // GET one user by id
-//router.get('/:id', controller.getUserById); 
+router.get('/:id', controller.getUserById); 
 
 // POST a user based on body info
-//router.post('/', controller.createUser);
+router.post('/', controller.createUser);
 
-// PUT ropute will edit/update a user based on the id in params
-//router.put('/:id', controller.updateUserById);
+// PUT route will edit/update a user based on the id in params
+router.put('/:id', controller.updateUserById);
 
 // DELETE user by id
-//router.delete('/:first_name', controller.deleteUserByFirstName);
+router.delete('/:id', controller.deleteUserById);
 
 // export the router to be used bgy the app
 module.exports = router;
