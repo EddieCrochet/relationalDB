@@ -14,6 +14,10 @@ let port = process.env.PORT || 4000;
 const usersRoute = require('./routers/users');
 app.use('/users', usersRoute);
 
+// tell app to use usersCpntacts route - and where
+const usersContactsRoute = require('./routers/usersContacts');
+app.use('/usersContacts', usersContactsRoute);
+
 //root route
 app.get('/', (req, res) => {
     res.send('Welcome to my server!')
