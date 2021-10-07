@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 
+let auth = require("../middleware/auth");
+
 // set up controller for the users
 let controller = require('../controller/users');
 
@@ -12,7 +14,7 @@ router.get('/', controller.getAllUsers);
 router.get('/:id', controller.getUserById); 
 
 // POST a user based on body info
-router.post('/', controller.createUser);
+router.post('/', [auth.checkJwt, auth.isAdmin], controller.createUser);
 
 // PUT route will edit/update a user based on the id in params
 router.put('/:id', controller.updateUserById);
